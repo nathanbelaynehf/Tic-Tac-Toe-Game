@@ -349,3 +349,98 @@ ol {
     transform: scale(1);
   }
 }
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust based on the number of columns */
+  grid-gap: 10px;
+  max-width: 400px; /* Set a maximum width to keep the board from stretching too much */
+  margin: 0 auto; /* Center the board */
+  padding: 10px;
+}
+
+#game-board li {
+  list-style: none; /* Remove bullet points */
+}
+
+#game-board button {
+  width: 100%;
+  height: 100px; /* Adjust height based on desired look */
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  #game-board {
+      grid-template-columns: repeat(3, 1fr); /* Still 3 columns on smaller screens */
+      grid-gap: 5px;
+  }
+
+  #game-board button {
+      height: 80px; /* Reduce button size on smaller screens */
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #game-board {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  #game-board button {
+      height: 60px;
+      font-size: 1.2rem;
+  }
+}
+#players {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow players to wrap to the next line */
+  justify-content: center; /* Center players */
+  align-items: center;
+  gap: 1rem; /* Reduced gap for tighter layout */
+}
+
+#players li {
+  display: flex;
+  align-items: center;
+  width: auto; /* Allow the width to adjust */
+  border: 2px solid transparent;
+  padding: 0.5rem; /* Consistent padding */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+#players.highlight-player li.active {
+  border-color: #f6e35a;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+#players.highlight-player li.active .player-name,
+#players.highlight-player li.active .player-symbol {
+  color: #f6e35a;
+}
+
+.player {
+  display: flex; /* Ensure player name and symbol are aligned */
+  align-items: center; /* Centered vertically */
+  padding: 0.25rem; /* Reduce padding for compactness */
+}
+
+.player-name {
+  display: inline-block;
+  font-size: 1rem; /* Adjusted size for better readability */
+  color: #e1dec7;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 8px; /* Reduce padding for better fit */
+}
+
+.player-symbol {
+  margin-left: 0.5rem; /* Adjusted margin for spacing */
+  font-size: 1rem; /* Ensure the size is consistent */
+}

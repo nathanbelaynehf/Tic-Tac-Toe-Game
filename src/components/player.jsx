@@ -21,12 +21,12 @@ function handleEditClick(){
        btnCaption="Save";
        }
     return (
-        <li className={isActive?'active':undefined}>
-        <span className="player">
-            {editablePlayerName}
-          <span className="player-symbol">{symbol}</span>
-        </span>
-        <button onClick={handleEditClick}>{btnCaption}</button>
-        </li>
+      <li className={isActive ? 'active' : undefined}>
+    <span className="player">
+        {editablePlayerName}
+        <span className="player-symbol">{symbol}</span>
+    </span>
+    <button onClick={handleEditClick} className="edit-button">{btnCaption}</button>
+</li>
     );
 }
